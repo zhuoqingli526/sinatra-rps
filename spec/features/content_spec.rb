@@ -39,6 +39,15 @@ describe "root URL" do
   end
 end
 
+describe "root URL" do
+  it "has a heading with the text 'Welcome to Rock-Paper-Scissors!'", points: 2, hint: h("copy_must_match") do
+    visit "/"
+
+    expect { find("h1", :text => /Welcome to Rock-Paper-Scissors/i) }.to_not raise_error,
+      "Expected page to have an <h1> with the text 'Welcome to Rock-Paper-Scissors!', but didn't find one."
+  end
+end
+
 describe "/rock" do
   it "has a functional page", points: 2 do
     visit "/rock"
