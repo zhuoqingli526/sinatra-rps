@@ -1,15 +1,5 @@
 require './app'
 
-configure do
-  # To open .html.erb files, need to register them
-  Tilt.register(Tilt::ERBTemplate, 'html.erb')
-  
-  # alternative to setting the layout in every erb() call
-  # we can set the default layout name to use and sinatra 
-  # will look for that file
-  set(:erb, :layout => :application_layout)
-end
-
 configure :development do
   require "sinatra/reloader"
 
